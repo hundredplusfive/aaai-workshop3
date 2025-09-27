@@ -10,6 +10,19 @@ def human_node(state: State) -> dict:
     user_input = input("\nYou: ").strip()
     
     # TODO: Return
+    human_message = {
+        "role": "user",
+        "content": f"You: {user_input}"
+    }
+
+    # Copy existing messages and append the new one
+    messages = state.get("messages", []).copy()
+    messages.append(human_message)
+
+    return {
+        "messages": messages,
+        "volley_msg_left": 5
+    }
 
 
 def check_exit_condition(state: State) -> Literal["summarizer", "coordinator"]:
@@ -19,6 +32,14 @@ def check_exit_condition(state: State) -> Literal["summarizer", "coordinator"]:
     messages = state.get("messages", [])
     
     # TODO: Return based on condition
+    if messages:
+        last_message = messages[-1]
+        content = last_message.get("content", "")
+
+        if "exit" in content.lower():
+            return "summarizer"
+
+    return "coordinator"
 
 
 def coordinator_routing(state: State) -> Literal["participant", "human"]:
@@ -28,6 +49,10 @@ def coordinator_routing(state: State) -> Literal["participant", "human"]:
     volley_left = state.get("volley_msg_left", 0)
 
     # TODO: Return based on condition
+    if volley_left > 0:
+        return "participant"
+    else:
+        return "human"
 
 
 def participant_node(state: State) -> dict:

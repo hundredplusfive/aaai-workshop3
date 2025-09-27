@@ -25,6 +25,17 @@ def build_graph():
     builder = StateGraph(State)
 
     # TODO: Connect the graph
+    builder.add_node("human", human_node)
+    builder.add_node("coordinator", coordinator)
+    builder.add_node("participant", participant_node)
+    builder.add_node("summarizer", summarizer_node)
+
+    builder.add_edge(START, "human")
+    builder.add_conditional_edges("human", check_exit_condition, {"summarizer": "summarizer", "coordinator": "coordinator"})
+    builder.add_conditional_edges("coordinator", coordinator_routing, {"participant": "participant", "human": "human"})
+
+    builder.add_edge("participant", "coordinator")
+    builder.add_edge("summarizer", END)
 
     return builder.compile()
 

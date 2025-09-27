@@ -7,3 +7,6 @@ class State(TypedDict):
     """
     
     # TODO: Define state
+    messages: list
+    volley_msg_left: int
+    next_speaker: Optional[str]

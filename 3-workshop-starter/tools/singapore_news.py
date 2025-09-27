@@ -1,5 +1,7 @@
 import httpx
+import lxml
 from bs4 import BeautifulSoup, Tag
+
 
 
 def singapore_news() -> str:
@@ -15,8 +17,7 @@ def singapore_news() -> str:
         response = httpx.get("https://mothership.sg/feed/", timeout=2.0)
         response.raise_for_status()
 
-        soup = BeautifulSoup(response.text, "xml")
-
+        soup = BeautifulSoup(response.text, features="xml")
         items = soup.find_all("item", limit=10)
 
         if items:
