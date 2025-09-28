@@ -2,7 +2,7 @@
 
 ## 📝 Overview
 
-This project simulates a **Travel Planning Committee** made up of AI agents, each with a distinct personality and area of expertise. The system helps users plan a trip based on **budget**, **preferences**, and **travel timing** through a natural multi-turn conversation.
+This project simulates a **Travel Planning Committee** made up of AI agents, each with a distinct personality and area of expertise. The system helps users plan a trip based on **weather conditions**, **cost breakdowns**, and **travel activities** through a natural multi-turn conversation.
 
 ---
 
