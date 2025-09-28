@@ -1,0 +1,235 @@
+=== TRAVEL PLANNING COMMITTEE CHAT ===
+Plan your next trip with our expert travel agents! Type 'exit' to end.
+
+Setting: A lively travel planning session with a team of passionate travel advisors...
+Meet Emily, the budget-savvy travel blogger,
+Mark, the detail-focused ex-airline agent,
+and Sara, the adventurous explorer sharing hidden gems.
+
+             +-----------+              
+             | __start__ |              
+             +-----------+              
+                   *                    
+                   *                    
+                   *                    
+               +-------+                
+               | human |                
+               +-------+                
+            ...         ...             
+           .               .            
+         ..                 ..          
++-------------+         +------------+  
+| coordinator |         | summarizer |  
++-------------+         +------------+  
+        *                      *        
+        *                      *        
+        *                      *        
++-------------+           +---------+   
+| participant |           | __end__ |   
++-------------+           +---------+   
+
+You: I have a budget of $2000 for a one-week trip. Which countries do you recommend?                                                            
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I have a budget of $2000 for a one-week trip. Which countries do you recommend?'}], 'volley_msg_left': 2, 'next_speaker': None}
+    [COORDINATOR] Volley messages left: 2
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: emily
+    [COORDINATOR] Final selection: emily (volley 2 -> 1)
+    [DEBUG] 
+=== Emily Tan is thinking... ===
+    [DEBUG] Iteration 1/5
+    [DEBUG] LLM Response:
+Thought: The user has $2,000 for a 7-day trip — I should pull typical 7-day cost estimates for several countries to see which fit the budget, then check activities. I'll start by getting cost breakdowns.
+Action: cost_breakdown
+Message: Nice — I’ll check 7-day cost estimates for several countries that fit a $2,000 budget. Quick question: any preferred region (Asia, Europe, Latin America) or are you flexible? 🙂
+
+    [DEBUG] Final Message: Nice — I’ll check 7-day cost estimates for several countries that fit a $2,000 budget. Quick question: any preferred region (Asia, Europe, Latin America) or are you flexible? 🙂
+    [DEBUG] === End of Emily Tan's thought process ===
+
+
+Emily Tan: Nice — I’ll check 7-day cost estimates for several countries that fit a $2,000 budget. Quick question: any preferred region (Asia, Europe, Latin America) or are you flexible? 🙂
+
+
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I have a budget of $2000 for a one-week trip. Which countries do you recommend?'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Nice — I’ll check 7-day cost estimates for several countries that fit a $2,000 budget. Quick question: any preferred region (Asia, Europe, Latin America) or are you flexible? 🙂\n\n'}], 'volley_msg_left': 1, 'next_speaker': 'emily'}
+    [COORDINATOR] Volley messages left: 1
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: sara
+    [COORDINATOR] Final selection: sara (volley 1 -> 0)
+
+You: I prefer asia. I would like to go skiing during December
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I have a budget of $2000 for a one-week trip. Which countries do you recommend?'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Nice — I’ll check 7-day cost estimates for several countries that fit a $2,000 budget. Quick question: any preferred region (Asia, Europe, Latin America) or are you flexible? 🙂\n\n'}, {'role': 'user', 'content': 'You: I prefer asia. I would like to go skiing during December'}], 'volley_msg_left': 2, 'next_speaker': 'sara'}
+    [COORDINATOR] Volley messages left: 2
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: sara
+    [COORDINATOR] Final selection: sara (volley 2 -> 1)
+    [DEBUG] 
+=== Sara Wong is thinking... ===
+    [DEBUG] Iteration 1/5
+    [DEBUG] LLM Response:
+Thought: The user wants a 7-day skiing trip in Asia in December on a $2,000 budget. I should pull 7-day cost estimates for top Asian ski destinations (Japan, South Korea, China, and India/Gulmarg) to see which fit the budget and then recommend options. I also need one essential detail: the user's departure city to estimate flights accurately.
+
+Action: cost_breakdown (params: countries = ["Japan","South Korea","China","India"], days = 7, month = "December", budget = 2000, trip_type = "skiing")
+
+Message: Sweet — I’ll check 7-day cost estimates for Japan, South Korea, China (Changbai/Yabuli) and India (Gulmarg). Quick question: what’s your departure city/airport? ✈️🏂 #SkiTrip
+
+    [DEBUG] Final Message: Sweet — I’ll check 7-day cost estimates for Japan, South Korea, China (Changbai/Yabuli) and India (Gulmarg). Quick question: what’s your departure city/airport? ✈️🏂 #SkiTrip
+    [DEBUG] === End of Sara Wong's thought process ===
+
+
+Sara Wong: Sweet — I’ll check 7-day cost estimates for Japan, South Korea, China (Changbai/Yabuli) and India (Gulmarg). Quick question: what’s your departure city/airport? ✈️🏂 #SkiTrip
+
+
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I have a budget of $2000 for a one-week trip. Which countries do you recommend?'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Nice — I’ll check 7-day cost estimates for several countries that fit a $2,000 budget. Quick question: any preferred region (Asia, Europe, Latin America) or are you flexible? 🙂\n\n'}, {'role': 'user', 'content': 'You: I prefer asia. I would like to go skiing during December'}, {'role': 'assistant', 'name': 'Sara Wong', 'content': '\nSara Wong: Sweet — I’ll check 7-day cost estimates for Japan, South Korea, China (Changbai/Yabuli) and India (Gulmarg). Quick question: what’s your departure city/airport? ✈️🏂 #SkiTrip\n\n'}], 'volley_msg_left': 1, 'next_speaker': 'sara'}
+    [COORDINATOR] Volley messages left: 1
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: sara
+    [COORDINATOR] Final selection: sara (volley 1 -> 0)
+
+You: From Singapore. Japan sounds nice during December
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I have a budget of $2000 for a one-week trip. Which countries do you recommend?'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Nice — I’ll check 7-day cost estimates for several countries that fit a $2,000 budget. Quick question: any preferred region (Asia, Europe, Latin America) or are you flexible? 🙂\n\n'}, {'role': 'user', 'content': 'You: I prefer asia. I would like to go skiing during December'}, {'role': 'assistant', 'name': 'Sara Wong', 'content': '\nSara Wong: Sweet — I’ll check 7-day cost estimates for Japan, South Korea, China (Changbai/Yabuli) and India (Gulmarg). Quick question: what’s your departure city/airport? ✈️🏂 #SkiTrip\n\n'}, {'role': 'user', 'content': 'You: From Singapore. Japan sounds nice during December'}], 'volley_msg_left': 2, 'next_speaker': 'sara'}
+    [COORDINATOR] Volley messages left: 2
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: mark
+    [COORDINATOR] Final selection: mark (volley 2 -> 1)
+    [DEBUG] 
+=== Mark Lim is thinking... ===
+    [DEBUG] Iteration 1/5
+    [DEBUG] LLM Response:
+Thought: The user confirmed Japan for a 7-day December ski trip from Singapore with a $2,000 budget. I need 7-day cost estimates (flights, hotels, food, local transport) for Japan in December to see which ski regions fit the budget.
+
+Action: cost_breakdown (country=Japan, departure=Singapore (SIN), duration=7 days, month=December, focus=ski trip)
+
+    [DEBUG] Executing tool: cost_breakdown
+    [DEBUG] Observation: {'Malaysia': {'average_flight': 400, 'hotel_per_night': 150, 'food_per_day': 40, 'local_transport_per_day': 15, 'daily_budget': 205, 'recommended_trip_days': 5, 'currencies': 'SGD'}, 'Japan': {'average_flight': 700, 'hotel_per_night': 120, 'food_per_day': 35, 'local_transport_per_day': 20, 'daily_budget': 175, 'recommended_trip_days': 7, 'currencies': 'SGD'}, 'Australia': {'average_flight': 900, 'hotel_per_night': 130, 'food_per_day': 30, 'local_transport_per_day': 18, 'daily_budget': 178, 'recommended_trip_days': 7, 'currencies': 'SGD'}, 'Brazil': {'average_flight': 800, 'hotel_per_night': 90, 'food_per_day': 25, 'local_transport_per_day': 12, 'daily_budget': 127, 'recommended_trip_days': 6, 'currencies': 'SGD'}, 'Vietnam': {'average_flight': 600, 'hotel_per_night': 40, 'food_per_day': 15, 'local_transport_per_day': 8, 'daily_budget': 63, 'recommended_trip_days': 5, 'currencies': 'SGD'}, 'Portugal': {'average_flight': 750, 'hotel_per_night': 100, 'food_per_day': 30, 'local_transport_per_day': 10, 'daily_budget': 140, 'recommended_trip_days': 6, 'currencies': 'SGD'}}
+    [DEBUG] 
+    [DEBUG] Iteration 2/5
+    [DEBUG] LLM Response:
+Thought: The user confirmed Japan for a 7‑day December ski trip from Singapore on a $2,000 budget. I should fetch popular Japanese ski regions and typical ski-related costs/activities (lift passes, rentals, transfers) to produce 3–4 viable resort options and a concise budget note.
+
+Action: activities (country=Japan, focus="ski resorts in December; Niseko, Hakuba, Myoko, Zao; lift pass and rental info; transfers from major airports")
+
+    [DEBUG] Executing tool: activities
+    [DEBUG] Observation: --- Popular Activities by Country ---
+
+Malaysia:
+- Explore Kuala Lumpur’s Petronas Towers
+- Visit Langkawi beaches
+- Trek in Cameron Highlands
+- Discover street food in Penang
+- Explore Borneo’s rainforests
+
+Japan:
+- Visit historic temples in Kyoto
+- Experience cherry blossom season
+- Explore Tokyo’s vibrant districts
+- Relax in hot springs (onsen)
+- Ski in Hokkaido during winter
+
+Australia:
+- Dive the Great Barrier Reef
+- Visit Sydney Opera House
+- Explore the Outback
+- Surf at Bondi Beach
+- Hike in Blue Mountains
+
+Brazil:
+- Visit Christ the Redeemer statue
+- Enjoy Rio Carnival
+- Explore Amazon rainforest
+- Relax on Copacabana beach
+- Discover Iguazu Falls
+
+Vietnam:
+- Cruise Ha Long Bay
+- Explore ancient Hoi An town
+- Visit Cu Chi Tunnels
+- Taste street food in Hanoi
+- Trek in Sapa mountains
+
+Portugal:
+- Tour Lisbon’s historic neighborhoods
+- Relax on Algarve beaches
+- Visit Porto’s wine cellars
+- Explore Sintra castles
+- Enjoy Fado music performances
+
+    [DEBUG] 
+    [DEBUG] Iteration 3/5
+    [DEBUG] LLM Response:
+Thought: User confirmed Japan for a 7-day December ski trip from Singapore with a SGD 2,000 budget. I will present 3 viable Japanese ski-region options (trade-offs: snow quality vs transfer cost) with concise cost estimates (flight, accommodation, food, transport + ski-specific costs) and next steps for booking.
+
+Action: activities (country=Japan, focus="ski resorts Niseko, Hakuba, Myoko, Zao; typical lift-pass, rental and airport-to-resort transfer costs in December")
+
+Message: Recommended options (estimates in SGD, 7 days / 6 nights):
+
+- Hakuba (Nagano) — Best balance of terrain and access from Tokyo. Estimated total ~2,000–2,200 (Flight 700 + Accommodation 720 + Food 245 + Local transport 140 + Ski 300 [3 days lift+rentals] + Transfers ~100–200). Slight over-budget unless you choose budget lodging or reduce ski days to 2.
+
+- Myoko (Niigata) — Good value, less crowded, reliable snow. Estimated total ~1,850–1,950 (same base + Ski ~250 + Transfers ~60–120). Likely to fit your SGD 2,000 budget with mid-range lodging.
+
+- Zao (Yamagata) — Most budget-friendly and easiest transfers from Sendai/Tokyo; unique snow monsters (juhyo). Estimated total ~1,750–1,900 (same base + Ski ~200 + Transfers ~40–80). Best fit if you must stay within SGD 2,000 without compromise.
+
+If you want, I will prepare a detailed 7-day itinerary and exact pricing for one chosen resort (flight options, recommended lodging, transfer timings, and ski pass/rental suppliers). Which resort should I prepare details for?
+
+    [DEBUG] Final Message: Recommended options (estimates in SGD, 7 days / 6 nights):
+
+- Hakuba (Nagano) — Best balance of terrain and access from Tokyo. Estimated total ~2,000–2,200 (Flight 700 + Accommodation 720 + Food 245 + Local transport 140 + Ski 300 [3 days lift+rentals] + Transfers ~100–200). Slight over-budget unless you choose budget lodging or reduce ski days to 2.
+
+- Myoko (Niigata) — Good value, less crowded, reliable snow. Estimated total ~1,850–1,950 (same base + Ski ~250 + Transfers ~60–120). Likely to fit your SGD 2,000 budget with mid-range lodging.
+
+- Zao (Yamagata) — Most budget-friendly and easiest transfers from Sendai/Tokyo; unique snow monsters (juhyo). Estimated total ~1,750–1,900 (same base + Ski ~200 + Transfers ~40–80). Best fit if you must stay within SGD 2,000 without compromise.
+
+If you want, I will prepare a detailed 7-day itinerary and exact pricing for one chosen resort (flight options, recommended lodging, transfer timings, and ski pass/rental suppliers). Which resort should I prepare details for?
+    [DEBUG] === End of Mark Lim's thought process ===
+
+
+Mark Lim: Recommended options (estimates in SGD, 7 days / 6 nights):
+
+- Hakuba (Nagano) — Best balance of terrain and access from Tokyo. Estimated total ~2,000–2,200 (Flight 700 + Accommodation 720 + Food 245 + Local transport 140 + Ski 300 [3 days lift+rentals] + Transfers ~100–200). Slight over-budget unless you choose budget lodging or reduce ski days to 2.
+
+- Myoko (Niigata) — Good value, less crowded, reliable snow. Estimated total ~1,850–1,950 (same base + Ski ~250 + Transfers ~60–120). Likely to fit your SGD 2,000 budget with mid-range lodging.
+
+- Zao (Yamagata) — Most budget-friendly and easiest transfers from Sendai/Tokyo; unique snow monsters (juhyo). Estimated total ~1,750–1,900 (same base + Ski ~200 + Transfers ~40–80). Best fit if you must stay within SGD 2,000 without compromise.
+
+If you want, I will prepare a detailed 7-day itinerary and exact pricing for one chosen resort (flight options, recommended lodging, transfer timings, and ski pass/rental suppliers). Which resort should I prepare details for?
+
+
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I have a budget of $2000 for a one-week trip. Which countries do you recommend?'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Nice — I’ll check 7-day cost estimates for several countries that fit a $2,000 budget. Quick question: any preferred region (Asia, Europe, Latin America) or are you flexible? 🙂\n\n'}, {'role': 'user', 'content': 'You: I prefer asia. I would like to go skiing during December'}, {'role': 'assistant', 'name': 'Sara Wong', 'content': '\nSara Wong: Sweet — I’ll check 7-day cost estimates for Japan, South Korea, China (Changbai/Yabuli) and India (Gulmarg). Quick question: what’s your departure city/airport? ✈️🏂 #SkiTrip\n\n'}, {'role': 'user', 'content': 'You: From Singapore. Japan sounds nice during December'}, {'role': 'assistant', 'name': 'Mark Lim', 'content': '\nMark Lim: Recommended options (estimates in SGD, 7 days / 6 nights):\n\n- Hakuba (Nagano) — Best balance of terrain and access from Tokyo. Estimated total ~2,000–2,200 (Flight 700 + Accommodation 720 + Food 245 + Local transport 140 + Ski 300 [3 days lift+rentals] + Transfers ~100–200). Slight over-budget unless you choose budget lodging or reduce ski days to 2.\n\n- Myoko (Niigata) — Good value, less crowded, reliable snow. Estimated total ~1,850–1,950 (same base + Ski ~250 + Transfers ~60–120). Likely to fit your SGD 2,000 budget with mid-range lodging.\n\n- Zao (Yamagata) — Most budget-friendly and easiest transfers from Sendai/Tokyo; unique snow monsters (juhyo). Estimated total ~1,750–1,900 (same base + Ski ~200 + Transfers ~40–80). Best fit if you must stay within SGD 2,000 without compromise.\n\nIf you want, I will prepare a detailed 7-day itinerary and exact pricing for one chosen resort (flight options, recommended lodging, transfer timings, and ski pass/rental suppliers). Which resort should I prepare details for?\n\n'}], 'volley_msg_left': 1, 'next_speaker': 'mark'}
+    [COORDINATOR] Volley messages left: 1
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: mark
+    [COORDINATOR] Final selection: mark (volley 1 -> 0)
+
+You: exit
+
+=== CONVERSATION ENDING ===
+
+=== TRAVEL PLANNING CONVERSATION SUMMARY ===
+
+Summary of the Travel Planning Committee discussion
+
+1) Key destinations, budgets, and activities discussed
+- User goal: 1-week trip in December with skiing, Asia-focused, departing from Singapore, budget around USD 2,000.
+- Potential destinations (initial scope): Japan, South Korea, China (Changbai/Yabuli), India (Gulmarg). Focus later narrowed to Japan for December skiing.
+- Budget notes (presented in SGD by the team): 
+  - Hakuba (Nagano): ~2,000–2,200 SGD total (flight ~700 + lodging ~720 + meals ~245 + local transport ~140 + ski passes ~300 + transfers ~100–200). Slight over budget unless cheaper lodging or fewer ski days.
+  - Myoko (Niigata): ~1,850–1,950 SGD total (similar breakdown; ski ~250; transfers ~60–120). Fits budget with mid-range lodging.
+  - Zao (Yamagata): ~1,750–1,900 SGD total (ski ~200; transfers ~40–80). Best fit for strict SGD 2,000 limit.
+- Activities highlighted: skiing (3 days lift+rentals as a typical cost component), transfers, local transport, food, and lodging.
+
+2) Roles and contributions of each travel agent
+- You (the user): Shared core preferences (Asia, December skiing, departing from Singapore) and budget; indicated Japan as a preferred option.
+- Emily Tan: Opened the discussion with a plan to run 7-day cost estimates for multiple countries and asked for preferred region; guided the initial, broad scoping.
+- Sara Wong: Expanded the scope by listing Japan, South Korea, China, and India for cost estimates; requested departure city to tailor quotes.
+- Mark Lim: Delivered concrete, Japan-specific recommendations with a detailed cost breakdown and clear viability notes; offered to prepare a full 7-day itinerary for any chosen resort.
+
+3) Important recommendations or user preferences highlighted
+- Primary preference: Asia, December skiing, from Singapore.
+- Most viable options within budget: Myoko or Zao (fit within ~1,750–1,950 SGD; good value, manageable transfers).
+- Hakuba is possible but may exceed the budget unless adjustments are made (cheaper lodging or fewer ski days).
+- Next step offered: if a resort is chosen (Myoko, Zao, or Hakuba), a detailed itinerary with flights, lodging, transfers, and ski passes can be prepared.
+
+4) Overall tone and flow of the planning session
+- Tone: collaborative, data-driven, and supportive; agents progressively refined options from broad to specific.
+- Flow: clear progression from general budget and regional questions to region-specific options and concrete cost estimates, ending with a proposed next step (detailed itinerary for a chosen resort).
+- Session status: user signaled exit at the end, with the offering to provide a future, detailed plan for a chosen resort.
+
+Thank you! Let's plan another trip again!
