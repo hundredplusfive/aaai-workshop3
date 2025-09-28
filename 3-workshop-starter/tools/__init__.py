@@ -1,10 +1,10 @@
 """
-Tools module for Singapore Kopitiam project.
+Tools module for Travel Planning Committee project.
 """
 
-from .singapore_time import singapore_time
-from .singapore_weather import singapore_weather
-from .singapore_news import singapore_news
+from .country_activities import country_activities
+from .country_cost import country_cost
+from .country_mthly_weather import country_mthly_weather
 from .test import test_print_all
 
-__all__ = ['singapore_time', 'singapore_weather', 'singapore_news', 'test_print_all']
+__all__ = ['country_activities', 'country_cost', 'country_mthly_weather', 'test_print_all']

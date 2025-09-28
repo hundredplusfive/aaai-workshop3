@@ -41,12 +41,12 @@ def build_graph():
 
 
 def main():
-    print("=== SINGAPORE KOPITIAM CHATTER ===")
-    print("Chat with our kopitiam regulars! Type 'exit' to end.\n")
-    print("Setting: A bustling Singapore kopitiam on a typical afternoon...")
-    print("The regulars are here - Uncle Ah Seng at his drinks stall,")
-    print("Mei Qi with her phone, Bala checking football scores,")
-    print("and Dr. Tan sipping his kopi-o.\n")
+    print("=== TRAVEL PLANNING COMMITTEE CHAT ===")
+    print("Plan your next trip with our expert travel agents! Type 'exit' to end.\n")
+    print("Setting: A lively travel planning session with a team of passionate travel advisors...")
+    print("Meet Emily, the budget-savvy travel blogger,")
+    print("Mark, the detail-focused ex-airline agent,")
+    print("and Sara, the adventurous explorer sharing hidden gems.\n")
 
     graph = build_graph()
 

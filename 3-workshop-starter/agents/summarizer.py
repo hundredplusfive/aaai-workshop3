@@ -27,22 +27,23 @@ def summarizer(state) -> str:
         return "No conversation content to summarize."
 
     # System prompt for summarization
-    system_prompt = """You are a keen observer at a Singapore kopitiam who has been listening to the conversation.
+    system_prompt = """You are an attentive observer listening to a Travel Planning Committee discussion about organizing trips based on user preferences and budget.
 
-Generate a concise summary of the conversation that captures:
-1. Key topics discussed
-2. The dynamics between participants
-3. Any memorable quotes or highlights
-4. The overall mood and flow of the conversation
+    Generate a concise summary of the conversation that captures:
+    1. Key travel destinations, budgets, and activities discussed
+    2. The roles and contributions of each travel agent involved
+    3. Any important recommendations or user preferences highlighted
+    4. The overall tone and flow of the planning session
 
-Format your summary in a clear, engaging way that captures the essence of kopitiam banter.
-Keep it concise but insightful."""
+    Format your summary clearly and engagingly to reflect the collaborative and helpful nature of the committee.
+    Keep it concise yet informative.
+    """
 
     user_prompt = f"""Here's the conversation that took place:
 
 {conversation_text}
 
-Please provide a summary of this kopitiam conversation."""
+Please provide a summary of this conversation."""
 
     try:
         # Call LLM
@@ -59,11 +60,11 @@ Please provide a summary of this kopitiam conversation."""
             summary = str(response.content).strip()
 
         # Format with header
-        return f"=== KOPITIAM CONVERSATION SUMMARY ===\n\n{summary}"
+        return f"=== TRAVEL PLANNING CONVERSATION SUMMARY ===\n\n{summary}"
 
     except Exception as e:
         # Fallback to basic summary if LLM fails
-        return f"""=== KOPITIAM CONVERSATION SUMMARY ===
+        return f"""=== TRAVEL PLANNING CONVERSATION SUMMARY ===
 
 Total messages: {len(messages)}
 

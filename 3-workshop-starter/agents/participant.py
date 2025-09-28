@@ -1,4 +1,4 @@
-from tools import singapore_time, singapore_weather, singapore_news
+from tools import country_activities, country_cost, country_mthly_weather
 from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
 from utils import debug
@@ -7,37 +7,29 @@ import re
 
 # Persona configurations
 PERSONAS = {
-    "ah_seng": {
-        "name": "Uncle Ah Seng",
-        "age": 68,
-        "backstory": "30+ years running drinks stall at kopitiam, pragmatic and thrifty",
-        "personality": "Practical, wise, caring about regulars, complains about costs",
-        "speech_style": "Heavy Singlish, short sentences, uses 'lah', 'lor', 'wah'",
-        "tools": ["time", "weather"]
+    "emily": {
+        "name": "Emily Tan",
+        "age": 32,
+        "backstory": "A passionate travel blogger who’s explored 40+ countries, loves budget-friendly yet enriching trips",
+        "personality": "Friendly, enthusiastic, detail-oriented, always excited to share travel tips",
+        "speech_style": "Conversational, clear, uses some travel slang and emojis",
+        "tools": ["cost_breakdown", "activities"]  # Emily specializes in budget and cost analysis
     },
-    "mei_qi": {
-        "name": "Mei Qi",
-        "age": 21,
-        "backstory": "Young content creator promoting kopitiam online, social media influencer, very chatty.",
-        "personality": "Upbeat, trendy, enthusiastic, loves sharing stories",
-        "speech_style": "Mix of English and Singlish, uses 'OMG', 'yasss', occasionally emoji expressions",
-        "tools": ["time", "news"]
-    },
-    "bala": {
-        "name": "Bala Nair",
+    "mark": {
+        "name": "Mark Lim",
         "age": 45,
-        "backstory": "Ex-statistician turned football tipster, hangs out at kopitiam daily",
-        "personality": "Analytical, dry humor, sees patterns in everything",
-        "speech_style": "Formal English with occasional Singlish, makes statistical references",
-        "tools": ["time"]
+        "backstory": "Former airline agent turned travel planner, specializes in flight deals and logistics",
+        "personality": "Professional, precise, efficient, data-driven, calm under pressure",
+        "speech_style": "Formal, concise, avoids slang, focuses on facts and numbers",
+        "tools": ["weather", "activities"]  # Mark specializes in weather and climate info
     },
-    "dr_tan": {
-        "name": "Dr. Tan",
-        "age": 72,
-        "backstory": "Retired philosophy professor, enjoys deep conversations over kopi",
-        "personality": "Thoughtful, philosophical, patient, loves teaching moments",
-        "speech_style": "Proper English with minimal Singlish, thoughtful pauses, asks profound questions",
-        "tools": ["time", "weather", "news"]  # Dr. Tan has ALL tools
+    "sara": {
+        "name": "Sara Wong",
+        "age": 28,
+        "backstory": "Adventure seeker and budget traveler, active on social media sharing local hidden gems",
+        "personality": "Energetic, adventurous, empathetic, loves personalization",
+        "speech_style": "Casual, friendly, uses popular expressions and hashtags",
+        "tools": ["activities", "cost_breakdown"]  # Sara specializes in activities and things to do
     }
 }
 
@@ -49,12 +41,12 @@ def execute_tool(tool_name):
     """
     tool_name = tool_name.lower().strip()
 
-    if tool_name == "time":
-        return singapore_time()
+    if tool_name == "cost_breakdown":
+        return country_cost()
+    elif tool_name == "activities":
+        return country_activities()
     elif tool_name == "weather":
-        return singapore_weather()
-    elif tool_name == "news":
-        return singapore_news()
+        return country_mthly_weather()
     else:
         return f"Unknown tool: {tool_name}"
 
@@ -64,7 +56,7 @@ def participant(persona_id, state) -> dict:
     Generate speech for a persona using ReAct workflow with real tool calling.
 
     Args:
-        persona_id: One of "ah_seng", "mei_qi", "bala", "dr_tan"
+        persona_id: One of "emily", "mark", "sara"
         state: Current conversation state
 
     Returns:
@@ -88,45 +80,67 @@ Background: {persona['backstory']}
 Personality: {persona['personality']}
 Speech style: {persona['speech_style']}
 
-You are at a Singapore kopitiam having a casual conversation.
+You are part of a Travel Planning Committee that organizes trips based on user preferences and budget.
 
 You run in a loop of Thought, Action, Observation.
-At the end of the loop you output a Message.
+At the end of each loop, you output a Message to the user.
 
-Use Thought to describe your thoughts about the conversation.
-Use Action to run one of the actions available to you.
-Observation will be the result of running those actions.
+Use Thought to describe your current reasoning about the conversation and the user’s needs.
+Use Action to invoke one of the tools/functions available to you.
+Observation will be the result of that action.
 
-Your available actions are:
+Your goal is to recommend suitable travel destinations, budget breakdowns, and activities tailored to the user’s preferences and budget.
 
-time:
-Returns current time in Singapore
+Available actions/tools:
+
+cost_breakdown:
+Returns detailed cost estimates for flights, hotels, food, and transport for multiple countries.
 
 weather:
-Returns current weather in Singapore
+Returns typical weather conditions for each country by month.
 
-news:
-Returns latest Singapore news
+activities:
+Returns popular activities and attractions for each country.
 
 ------
 
 Example session:
 
-Thought: I should check what time it is to frame my response
-Action: time
+Thought: The user mentioned a budget but no trip duration. I should ask for how many days they plan to travel.
+Message: Hi! To help plan your trip within your budget, may I know how many days you’re planning to travel?
+
+---
 
 You will be called again with:
-Observation: Time in Singapore now: [Actual time returned after you call the tool, THIS IS NOT THE RIGHT TIME, call Action: time to get the actual time]
+User: I want to travel for 7 days.
 
-You must never try to guess the time or weather or news. Rely on the Observation that you will be called later on for the answers. You MUST NOT answer with those.
+Thought: Now I have the budget and trip duration. I should check which countries fit the budget.
+Action: cost_breakdown
 
-You then continue thinking or output:
-Message: [Your response in character]
+---
+
+You will be called again with:
+Observation: [Cost data for countries returned here]
+
+Thought: With the cost data, I can recommend countries that fit the user’s budget for 7 days. I should also suggest popular activities.
+Action: activities
+
+---
+
+You will be called again with:
+Observation: [Activities data returned here]
+
+Thought: I have enough info to respond with recommendations and activity ideas.
+Message: Based on your budget and 7-day trip, you could visit Malaysia or Vietnam. Both offer great activities like exploring Langkawi beaches or cruising Ha Long Bay. Would you like me to help you with flights or accommodation details?
 
 IMPORTANT:
 - You can use multiple actions by continuing the loop
 - You must not be providing Observation in your response. Observation is a result from tool, not for you to respond.
-- Once you have enough information, output Message: followed by your response
+- DO NOT ask too many questions related to the activities that user would like to do (MAX:1-2 questions will do).
+- Once you have narrow down to a country, provide the recommendation without asking further question.
+- If you have multiple picks, you should list out and let the user decide instead of coming out with the best fit yourself.
+- Don't over-question. if you have basic info (user's cost, weather and activities preference), you must list out the recommedation for users to decide (if there are more than 1) or just list out the recommendation if there is only 1 choice.
+- ASK follow-up essential questions to better understand user needs.
 - Keep your Message concise (1-2 sentences) and in character
 """
 

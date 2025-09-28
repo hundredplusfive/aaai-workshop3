@@ -1,6 +1,26 @@
-# kopitiam
+# 🧳 Travel Planning Committee – AI Trip Planner
 
-This is a simple project to learn LangGraph.
+## 📝 Overview
+
+This project simulates a **Travel Planning Committee** made up of AI agents, each with a distinct personality and area of expertise. The system helps users plan a trip based on **budget**, **preferences**, and **travel timing** through a natural multi-turn conversation.
+
+---
+
+## 🎯 Objective
+
+Help users choose suitable travel destinations by simulating how a real travel committee might work together—offering personalized suggestions, cost breakdowns, weather info, and activity ideas.
+
+---
+
+## 🧠 Agents & Tool Access
+
+| Agent  | Role / Background                  | Tools Access                         |
+|--------|------------------------------------|--------------------------------------|
+| Emily  | Travel budget analyst              | `cost_breakdown`, `activities`       |
+| Mark   | Ex-meteorologist travel consultant | `weather`, `activities`              |
+| Sara   | Adventure tour guide & backpacker  | `activities`, `cost_breakdown`       |
+
+---
 
 ## Set up
 
@@ -8,12 +28,3 @@ This is a simple project to learn LangGraph.
 uv sync
 uv run python main.py
 ```
-
-
-## Starter steps
-
-1. Sketch Graph
-1. Define State
-1. Define Tools (time)
-1. Define Nodes
-1. Define Graph (main.py)
