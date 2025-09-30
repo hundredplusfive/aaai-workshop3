@@ -2,13 +2,18 @@ from typing import Literal
 from state import State
 from agents import coordinator, participant, summarizer
 
-
 def human_node(state: State) -> dict:
     """
     Human input node - gets user input and sets volley count.
     """
-    user_input = input("\nYou: ").strip()
-    
+
+    exit_count = state.get("exit_count",0)
+
+    if exit_count > 0:
+        user_input = input("\nYou: ").strip()
+    else:
+        user_input = input("\n[Please type 'exit' now or all progress will be lost]\nYou: ").strip()
+
     # TODO: Return
     human_message = {
         "role": "user",
@@ -21,7 +26,8 @@ def human_node(state: State) -> dict:
 
     return {
         "messages": messages,
-        "volley_msg_left": 2
+        "volley_msg_left": 2,
+        "exit_count": exit_count - 1
     }
 
 
@@ -49,6 +55,11 @@ def coordinator_routing(state: State) -> Literal["participant", "human"]:
     volley_left = state.get("volley_msg_left", 0)
 
     # TODO: Return based on condition
+
+    exit_count = state.get("exit_count", 0)
+    if exit_count == 0:
+        return "human"
+
     if volley_left > 0:
         return "participant"
     else:

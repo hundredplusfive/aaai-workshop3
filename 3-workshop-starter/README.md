@@ -22,9 +22,34 @@ Help users choose suitable travel destinations by simulating how a real travel c
 
 ---
 
-## Set up
+## Setup
+Step 1: Add your OpenAI API Key into the file named ***.env.example***
+
+Step 2: Rename the  ***.env.example*** file to ***.env***
+
+Step 3: Turn off VPN
+
+---
+
+## Running the project
 
 ```sh
 uv sync
+
 uv run python main.py
 ```
+Additional note: Due to some constraints/configuration of the project, 
+the interaction between User and Participant is recommended to be completed within 6 exchanges.
+If not, the following error/exception will be shown:
+```sh
+An error occurred: Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/GRAPH_RECURSION_LIMIT
+Ending conversation...
+```
+
+### Prompt Tips
+Your first prompt should be telling the application 1 or more of the following:
+1. The number of days for the trip
+2. The month to travel
+3. Budget constraints
+

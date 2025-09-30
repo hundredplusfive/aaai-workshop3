@@ -1,0 +1,321 @@
+=== TRAVEL PLANNING COMMITTEE CHAT ===
+Plan your next trip with our expert travel agents! Type 'exit' to end.
+
+Setting: A lively travel planning session with a team of passionate travel advisors...
+Meet Emily, the budget-savvy travel blogger,
+Mark, the detail-focused ex-airline agent,
+and Sara, the adventurous explorer sharing hidden gems.
+
+             +-----------+              
+             | __start__ |              
+             +-----------+              
+                   *                    
+                   *                    
+                   *                    
+               +-------+                
+               | human |                
+               +-------+                
+            ...         ...             
+           .               .            
+         ..                 ..          
++-------------+         +------------+  
+| coordinator |         | summarizer |  
++-------------+         +------------+  
+        .                      *        
+        .                      *        
+        .                      *        
++-------------+           +---------+   
+| participant |           | __end__ |   
++-------------+           +---------+   
+
+You: I want to go on a 5-day trip in October
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I want to go on a 5-day trip in October'}], 'volley_msg_left': 2, 'next_speaker': None, 'exit_count': 5}
+    [COORDINATOR] Volley messages left: 2
+    [COORDINATOR] exit_count: 5
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: mark
+    [COORDINATOR] Final selection: mark (volley 2 -> 1)
+    [DEBUG] 
+=== Mark Lim is thinking... ===
+    [DEBUG] Iteration 1/5
+    [DEBUG] LLM Response:
+Thought: To produce accurate 5-day options for October I must run cost estimates and filter by the user’s budget; I also need to confirm departure location (Singapore assumed). I will request the budget and invoke the cost breakdown tool to prepare options.
+
+Action: cost_breakdown
+
+Message: I can prepare 5-day costed options for October. What is your total budget in SGD, and will you be departing from Singapore?
+
+    [DEBUG] Final Message: I can prepare 5-day costed options for October. What is your total budget in SGD, and will you be departing from Singapore?
+    [DEBUG] === End of Mark Lim's thought process ===
+
+
+Mark Lim: I can prepare 5-day costed options for October. What is your total budget in SGD, and will you be departing from Singapore?
+
+
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I want to go on a 5-day trip in October'}, {'role': 'assistant', 'name': 'Mark Lim', 'content': '\nMark Lim: I can prepare 5-day costed options for October. What is your total budget in SGD, and will you be departing from Singapore?\n\n'}], 'volley_msg_left': 1, 'next_speaker': 'mark', 'exit_count': 5}
+    [COORDINATOR] Volley messages left: 1
+    [COORDINATOR] exit_count: 5
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: emily
+    [COORDINATOR] Final selection: emily (volley 1 -> 0)
+
+You: My budget is $1300 and I am departing from Singapore
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I want to go on a 5-day trip in October'}, {'role': 'assistant', 'name': 'Mark Lim', 'content': '\nMark Lim: I can prepare 5-day costed options for October. What is your total budget in SGD, and will you be departing from Singapore?\n\n'}, {'role': 'user', 'content': 'You: My budget is $1300 and I am departing from Singapore'}], 'volley_msg_left': 2, 'next_speaker': 'emily', 'exit_count': 4}
+    [COORDINATOR] Volley messages left: 2
+    [COORDINATOR] exit_count: 4
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: emily
+    [COORDINATOR] Final selection: emily (volley 2 -> 1)
+    [DEBUG] 
+=== Emily Tan is thinking... ===
+    [DEBUG] Iteration 1/5
+    [DEBUG] LLM Response:
+Thought: The user gave a 5-day trip in October, departing Singapore with a SGD 1,300 budget. I should pull cost estimates for 5-day October trips from Singapore to see which destinations fit that budget, then suggest activities. I'll also ask one quick preference to tailor picks.
+
+Action: cost_breakdown (params: duration=5 days, month=October, budget=1300 SGD, depart=Singapore)
+
+Message: Great — I’ll check 5-day costed options for October within your $1,300 budget. Quick question: do you prefer beach, city, or nature-focused trips? 🌴🏙️🌲
+
+    [DEBUG] Final Message: Great — I’ll check 5-day costed options for October within your $1,300 budget. Quick question: do you prefer beach, city, or nature-focused trips? 🌴🏙️🌲
+    [DEBUG] === End of Emily Tan's thought process ===
+
+
+Emily Tan: Great — I’ll check 5-day costed options for October within your $1,300 budget. Quick question: do you prefer beach, city, or nature-focused trips? 🌴🏙️🌲
+
+
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I want to go on a 5-day trip in October'}, {'role': 'assistant', 'name': 'Mark Lim', 'content': '\nMark Lim: I can prepare 5-day costed options for October. What is your total budget in SGD, and will you be departing from Singapore?\n\n'}, {'role': 'user', 'content': 'You: My budget is $1300 and I am departing from Singapore'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Great — I’ll check 5-day costed options for October within your $1,300 budget. Quick question: do you prefer beach, city, or nature-focused trips? 🌴🏙️🌲\n\n'}], 'volley_msg_left': 1, 'next_speaker': 'emily', 'exit_count': 4}
+    [COORDINATOR] Volley messages left: 1
+    [COORDINATOR] exit_count: 4
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: sara
+    [COORDINATOR] Final selection: sara (volley 1 -> 0)
+
+You: I prefer a nature-focused trip
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I want to go on a 5-day trip in October'}, {'role': 'assistant', 'name': 'Mark Lim', 'content': '\nMark Lim: I can prepare 5-day costed options for October. What is your total budget in SGD, and will you be departing from Singapore?\n\n'}, {'role': 'user', 'content': 'You: My budget is $1300 and I am departing from Singapore'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Great — I’ll check 5-day costed options for October within your $1,300 budget. Quick question: do you prefer beach, city, or nature-focused trips? 🌴🏙️🌲\n\n'}, {'role': 'user', 'content': 'You: I prefer a nature-focused trip'}], 'volley_msg_left': 2, 'next_speaker': 'sara', 'exit_count': 3}
+    [COORDINATOR] Volley messages left: 2
+    [COORDINATOR] exit_count: 3
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: emily
+    [COORDINATOR] Final selection: emily (volley 2 -> 1)
+    [DEBUG] 
+=== Emily Tan is thinking... ===
+    [DEBUG] Iteration 1/5
+    [DEBUG] LLM Response:
+Thought: The user wants a 5-day nature-focused trip in October, departing Singapore with a SGD 1,300 budget. I should fetch 5-day cost estimates for likely nature destinations (nearby ASEAN + short-haul options) to see which fit the budget, then follow up with one quick preference question about activity intensity.
+
+Action: cost_breakdown
+
+    [DEBUG] Executing tool: cost_breakdown
+    [DEBUG] Observation: {'Malaysia': {'average_flight': 400, 'hotel_per_night': 150, 'food_per_day': 40, 'local_transport_per_day': 15, 'daily_budget': 205, 'recommended_trip_days': 5, 'currencies': 'SGD'}, 'Japan': {'average_flight': 700, 'hotel_per_night': 120, 'food_per_day': 35, 'local_transport_per_day': 20, 'daily_budget': 175, 'recommended_trip_days': 7, 'currencies': 'SGD'}, 'Australia': {'average_flight': 900, 'hotel_per_night': 130, 'food_per_day': 30, 'local_transport_per_day': 18, 'daily_budget': 178, 'recommended_trip_days': 7, 'currencies': 'SGD'}, 'Brazil': {'average_flight': 800, 'hotel_per_night': 90, 'food_per_day': 25, 'local_transport_per_day': 12, 'daily_budget': 127, 'recommended_trip_days': 6, 'currencies': 'SGD'}, 'Vietnam': {'average_flight': 600, 'hotel_per_night': 40, 'food_per_day': 15, 'local_transport_per_day': 8, 'daily_budget': 63, 'recommended_trip_days': 5, 'currencies': 'SGD'}, 'Portugal': {'average_flight': 750, 'hotel_per_night': 100, 'food_per_day': 30, 'local_transport_per_day': 10, 'daily_budget': 140, 'recommended_trip_days': 6, 'currencies': 'SGD'}}
+    [DEBUG] 
+    [DEBUG] Iteration 2/5
+    [DEBUG] LLM Response:
+Thought: Vietnam is the only country from the cost check that fits your $1,300 SGD budget for a 5-day nature-focused trip from Singapore. I should fetch popular nature activities in Vietnam for October and then ask one quick preference question (easy-going nature vs active hikes/water activities).
+Action: activities
+
+    [DEBUG] Executing tool: activities
+    [DEBUG] Observation: --- Popular Activities by Country ---
+
+Malaysia:
+- Explore Kuala Lumpur’s Petronas Towers
+- Visit Langkawi beaches
+- Trek in Cameron Highlands
+- Discover street food in Penang
+- Explore Borneo’s rainforests
+
+Japan:
+- Visit historic temples in Kyoto
+- Experience cherry blossom season
+- Explore Tokyo’s vibrant districts
+- Relax in hot springs (onsen)
+- Ski in Hokkaido during winter
+
+Australia:
+- Dive the Great Barrier Reef
+- Visit Sydney Opera House
+- Explore the Outback
+- Surf at Bondi Beach
+- Hike in Blue Mountains
+
+Brazil:
+- Visit Christ the Redeemer statue
+- Enjoy Rio Carnival
+- Explore Amazon rainforest
+- Relax on Copacabana beach
+- Discover Iguazu Falls
+
+Vietnam:
+- Cruise Ha Long Bay
+- Explore ancient Hoi An town
+- Visit Cu Chi Tunnels
+- Taste street food in Hanoi
+- Trek in Sapa mountains
+
+Portugal:
+- Tour Lisbon’s historic neighborhoods
+- Relax on Algarve beaches
+- Visit Porto’s wine cellars
+- Explore Sintra castles
+- Enjoy Fado music performances
+
+    [DEBUG] 
+    [DEBUG] Iteration 3/5
+    [DEBUG] LLM Response:
+Thought: Your SGD 1,300 budget for 5 days from Singapore points strongly to Vietnam — the cost check shows flights ~600 SGD and daily costs (hotel 40 + food 15 + local transport 8 = 63) → ~915 SGD total for 5 days, leaving ~385 SGD for activities/transfers/souvenirs. Best nature options: Ha Long Bay overnight cruise + Ninh Binh day trips (relaxed, scenic) or Sapa (more active trekking).
+
+Message: Vietnam is my top pick — suggested 5-day plan: Hanoi base + Ha Long Bay overnight cruise + Ninh Binh (or swap for a Sapa trek if you want mountains); estimated total ~915 SGD (flight + 5 days’ basics) leaving ~385 SGD for tours and extras. Quick question: do you prefer a relaxed boat/karst scenery trip (Ha Long Bay + Ninh Binh) or an active mountain trek (Sapa)? 🌿⛵️🏞️
+
+    [DEBUG] Final Message: Vietnam is my top pick — suggested 5-day plan: Hanoi base + Ha Long Bay overnight cruise + Ninh Binh (or swap for a Sapa trek if you want mountains); estimated total ~915 SGD (flight + 5 days’ basics) leaving ~385 SGD for tours and extras. Quick question: do you prefer a relaxed boat/karst scenery trip (Ha Long Bay + Ninh Binh) or an active mountain trek (Sapa)? 🌿⛵️🏞️
+    [DEBUG] === End of Emily Tan's thought process ===
+
+
+Emily Tan: Vietnam is my top pick — suggested 5-day plan: Hanoi base + Ha Long Bay overnight cruise + Ninh Binh (or swap for a Sapa trek if you want mountains); estimated total ~915 SGD (flight + 5 days’ basics) leaving ~385 SGD for tours and extras. Quick question: do you prefer a relaxed boat/karst scenery trip (Ha Long Bay + Ninh Binh) or an active mountain trek (Sapa)? 🌿⛵️🏞️
+
+
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I want to go on a 5-day trip in October'}, {'role': 'assistant', 'name': 'Mark Lim', 'content': '\nMark Lim: I can prepare 5-day costed options for October. What is your total budget in SGD, and will you be departing from Singapore?\n\n'}, {'role': 'user', 'content': 'You: My budget is $1300 and I am departing from Singapore'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Great — I’ll check 5-day costed options for October within your $1,300 budget. Quick question: do you prefer beach, city, or nature-focused trips? 🌴🏙️🌲\n\n'}, {'role': 'user', 'content': 'You: I prefer a nature-focused trip'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Vietnam is my top pick — suggested 5-day plan: Hanoi base + Ha Long Bay overnight cruise + Ninh Binh (or swap for a Sapa trek if you want mountains); estimated total ~915 SGD (flight + 5 days’ basics) leaving ~385 SGD for tours and extras. Quick question: do you prefer a relaxed boat/karst scenery trip (Ha Long Bay + Ninh Binh) or an active mountain trek (Sapa)? 🌿⛵️🏞️\n\n'}], 'volley_msg_left': 1, 'next_speaker': 'emily', 'exit_count': 3}
+    [COORDINATOR] Volley messages left: 1
+    [COORDINATOR] exit_count: 3
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: sara
+    [COORDINATOR] Final selection: sara (volley 1 -> 0)
+
+You: Vietname sounds great! I would like to try an active mountain trek in Sapa
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I want to go on a 5-day trip in October'}, {'role': 'assistant', 'name': 'Mark Lim', 'content': '\nMark Lim: I can prepare 5-day costed options for October. What is your total budget in SGD, and will you be departing from Singapore?\n\n'}, {'role': 'user', 'content': 'You: My budget is $1300 and I am departing from Singapore'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Great — I’ll check 5-day costed options for October within your $1,300 budget. Quick question: do you prefer beach, city, or nature-focused trips? 🌴🏙️🌲\n\n'}, {'role': 'user', 'content': 'You: I prefer a nature-focused trip'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Vietnam is my top pick — suggested 5-day plan: Hanoi base + Ha Long Bay overnight cruise + Ninh Binh (or swap for a Sapa trek if you want mountains); estimated total ~915 SGD (flight + 5 days’ basics) leaving ~385 SGD for tours and extras. Quick question: do you prefer a relaxed boat/karst scenery trip (Ha Long Bay + Ninh Binh) or an active mountain trek (Sapa)? 🌿⛵️🏞️\n\n'}, {'role': 'user', 'content': 'You: Vietname sounds great! I would like to try an active mountain trek in Sapa'}], 'volley_msg_left': 2, 'next_speaker': 'sara', 'exit_count': 2}
+    [COORDINATOR] Volley messages left: 2
+    [COORDINATOR] exit_count: 2
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: sara
+    [COORDINATOR] Final selection: sara (volley 2 -> 1)
+    [DEBUG] 
+=== Sara Wong is thinking... ===
+    [DEBUG] Iteration 1/5
+    [DEBUG] LLM Response:
+Thought: The user confirmed Vietnam with an active Sapa trek for 5 days in October and gave a SGD 1,300 budget from Singapore — I should fetch a detailed 5-day cost breakdown (flight, trains/buses to Sapa, accommodation, trek cost, food, local transport) so I can propose a concrete budget plan and options. I also need to ask one quick preference about trek style (homestay vs day trek) to tailor costs and itinerary.
+
+Action: cost_breakdown
+
+Message: Awesome — I’ll pull a detailed 5-day cost estimate for Hanoi + Sapa (active trek) in October. Quick one: do you want a multi-day guided trek with a homestay (more immersive) or just a day guided trek from Hanoi (faster, cheaper)? #SapaTrek #TravelReady
+
+    [DEBUG] Final Message: Awesome — I’ll pull a detailed 5-day cost estimate for Hanoi + Sapa (active trek) in October. Quick one: do you want a multi-day guided trek with a homestay (more immersive) or just a day guided trek from Hanoi (faster, cheaper)? #SapaTrek #TravelReady
+    [DEBUG] === End of Sara Wong's thought process ===
+
+
+Sara Wong: Awesome — I’ll pull a detailed 5-day cost estimate for Hanoi + Sapa (active trek) in October. Quick one: do you want a multi-day guided trek with a homestay (more immersive) or just a day guided trek from Hanoi (faster, cheaper)? #SapaTrek #TravelReady
+
+
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I want to go on a 5-day trip in October'}, {'role': 'assistant', 'name': 'Mark Lim', 'content': '\nMark Lim: I can prepare 5-day costed options for October. What is your total budget in SGD, and will you be departing from Singapore?\n\n'}, {'role': 'user', 'content': 'You: My budget is $1300 and I am departing from Singapore'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Great — I’ll check 5-day costed options for October within your $1,300 budget. Quick question: do you prefer beach, city, or nature-focused trips? 🌴🏙️🌲\n\n'}, {'role': 'user', 'content': 'You: I prefer a nature-focused trip'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Vietnam is my top pick — suggested 5-day plan: Hanoi base + Ha Long Bay overnight cruise + Ninh Binh (or swap for a Sapa trek if you want mountains); estimated total ~915 SGD (flight + 5 days’ basics) leaving ~385 SGD for tours and extras. Quick question: do you prefer a relaxed boat/karst scenery trip (Ha Long Bay + Ninh Binh) or an active mountain trek (Sapa)? 🌿⛵️🏞️\n\n'}, {'role': 'user', 'content': 'You: Vietname sounds great! I would like to try an active mountain trek in Sapa'}, {'role': 'assistant', 'name': 'Sara Wong', 'content': '\nSara Wong: Awesome — I’ll pull a detailed 5-day cost estimate for Hanoi + Sapa (active trek) in October. Quick one: do you want a multi-day guided trek with a homestay (more immersive) or just a day guided trek from Hanoi (faster, cheaper)? #SapaTrek #TravelReady\n\n'}], 'volley_msg_left': 1, 'next_speaker': 'sara', 'exit_count': 2}
+    [COORDINATOR] Volley messages left: 1
+    [COORDINATOR] exit_count: 2
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: sara
+    [COORDINATOR] Final selection: sara (volley 1 -> 0)
+
+You: Just a day guided trek from Hanoi will do!
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I want to go on a 5-day trip in October'}, {'role': 'assistant', 'name': 'Mark Lim', 'content': '\nMark Lim: I can prepare 5-day costed options for October. What is your total budget in SGD, and will you be departing from Singapore?\n\n'}, {'role': 'user', 'content': 'You: My budget is $1300 and I am departing from Singapore'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Great — I’ll check 5-day costed options for October within your $1,300 budget. Quick question: do you prefer beach, city, or nature-focused trips? 🌴🏙️🌲\n\n'}, {'role': 'user', 'content': 'You: I prefer a nature-focused trip'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Vietnam is my top pick — suggested 5-day plan: Hanoi base + Ha Long Bay overnight cruise + Ninh Binh (or swap for a Sapa trek if you want mountains); estimated total ~915 SGD (flight + 5 days’ basics) leaving ~385 SGD for tours and extras. Quick question: do you prefer a relaxed boat/karst scenery trip (Ha Long Bay + Ninh Binh) or an active mountain trek (Sapa)? 🌿⛵️🏞️\n\n'}, {'role': 'user', 'content': 'You: Vietname sounds great! I would like to try an active mountain trek in Sapa'}, {'role': 'assistant', 'name': 'Sara Wong', 'content': '\nSara Wong: Awesome — I’ll pull a detailed 5-day cost estimate for Hanoi + Sapa (active trek) in October. Quick one: do you want a multi-day guided trek with a homestay (more immersive) or just a day guided trek from Hanoi (faster, cheaper)? #SapaTrek #TravelReady\n\n'}, {'role': 'user', 'content': 'You: Just a day guided trek from Hanoi will do!'}], 'volley_msg_left': 2, 'next_speaker': 'sara', 'exit_count': 1}
+    [COORDINATOR] Volley messages left: 2
+    [COORDINATOR] exit_count: 1
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: sara
+    [COORDINATOR] Final selection: sara (volley 2 -> 1)
+    [DEBUG] 
+=== Sara Wong is thinking... ===
+    [DEBUG] Iteration 1/5
+    [DEBUG] LLM Response:
+Thought: The user wants a 5-day Vietnam trip (Hanoi + day Sapa trek) in October, departing Singapore with a SGD 1,300 budget. I should get a detailed cost breakdown (flights, hotels, food, transport, day trek/tours) to confirm it fits the budget and leave room for extras. 
+Action: cost_breakdown
+
+    [DEBUG] Executing tool: cost_breakdown
+    [DEBUG] Observation: {'Malaysia': {'average_flight': 400, 'hotel_per_night': 150, 'food_per_day': 40, 'local_transport_per_day': 15, 'daily_budget': 205, 'recommended_trip_days': 5, 'currencies': 'SGD'}, 'Japan': {'average_flight': 700, 'hotel_per_night': 120, 'food_per_day': 35, 'local_transport_per_day': 20, 'daily_budget': 175, 'recommended_trip_days': 7, 'currencies': 'SGD'}, 'Australia': {'average_flight': 900, 'hotel_per_night': 130, 'food_per_day': 30, 'local_transport_per_day': 18, 'daily_budget': 178, 'recommended_trip_days': 7, 'currencies': 'SGD'}, 'Brazil': {'average_flight': 800, 'hotel_per_night': 90, 'food_per_day': 25, 'local_transport_per_day': 12, 'daily_budget': 127, 'recommended_trip_days': 6, 'currencies': 'SGD'}, 'Vietnam': {'average_flight': 600, 'hotel_per_night': 40, 'food_per_day': 15, 'local_transport_per_day': 8, 'daily_budget': 63, 'recommended_trip_days': 5, 'currencies': 'SGD'}, 'Portugal': {'average_flight': 750, 'hotel_per_night': 100, 'food_per_day': 30, 'local_transport_per_day': 10, 'daily_budget': 140, 'recommended_trip_days': 6, 'currencies': 'SGD'}}
+    [DEBUG] 
+    [DEBUG] Iteration 2/5
+    [DEBUG] LLM Response:
+Thought: I need Sapa/day-trek specifics plus a tailored cost summary for your 5-day Hanoi + day Sapa trek in October and confirm it fits your $1,300 SGD budget. I'll pull Vietnam activity details to make sure the trek pricing and timings match a day-trip-from-Hanoi option.  
+Action: activities
+
+Message: Awesome — quick cost snapshot for 5 days (departing Singapore) — Estimated total ≈ 1,080 SGD:
+- Flights return: 600 SGD
+- Accommodation (4 nights @ ~40/night): 160 SGD
+- Food (5 days @ 15/day): 75 SGD
+- Local transport (5 days @ 8/day): 40 SGD
+- Day guided Sapa trek (Hanoi pick-up & return, incl. lunch): ~120 SGD
+- Extras (city tour/entrance fees, airport transfers, sim): ~85 SGD
+
+That leaves ~220 SGD buffer from your 1,300 budget for souvenirs, upgrades or a half-day extra tour. Quick 5-day sketch: Day 1 arrive Hanoi + Old Quarter stroll, Day 2 full-day Sapa guided trek (early depart/late return), Day 3 Hanoi museums + street food, Day 4 optional day trip (Ninh Binh/boat) or chill, Day 5 fly home. One quick Q — do you prefer budget guesthouses/hostels or a comfy 3-star hotel for your stay? #SapaTrek #LetsGoVietnam
+
+    [DEBUG] Final Message: Awesome — quick cost snapshot for 5 days (departing Singapore) — Estimated total ≈ 1,080 SGD:
+- Flights return: 600 SGD
+- Accommodation (4 nights @ ~40/night): 160 SGD
+- Food (5 days @ 15/day): 75 SGD
+- Local transport (5 days @ 8/day): 40 SGD
+- Day guided Sapa trek (Hanoi pick-up & return, incl. lunch): ~120 SGD
+- Extras (city tour/entrance fees, airport transfers, sim): ~85 SGD
+
+That leaves ~220 SGD buffer from your 1,300 budget for souvenirs, upgrades or a half-day extra tour. Quick 5-day sketch: Day 1 arrive Hanoi + Old Quarter stroll, Day 2 full-day Sapa guided trek (early depart/late return), Day 3 Hanoi museums + street food, Day 4 optional day trip (Ninh Binh/boat) or chill, Day 5 fly home. One quick Q — do you prefer budget guesthouses/hostels or a comfy 3-star hotel for your stay? #SapaTrek #LetsGoVietnam
+    [DEBUG] === End of Sara Wong's thought process ===
+
+
+Sara Wong: Awesome — quick cost snapshot for 5 days (departing Singapore) — Estimated total ≈ 1,080 SGD:
+- Flights return: 600 SGD
+- Accommodation (4 nights @ ~40/night): 160 SGD
+- Food (5 days @ 15/day): 75 SGD
+- Local transport (5 days @ 8/day): 40 SGD
+- Day guided Sapa trek (Hanoi pick-up & return, incl. lunch): ~120 SGD
+- Extras (city tour/entrance fees, airport transfers, sim): ~85 SGD
+
+That leaves ~220 SGD buffer from your 1,300 budget for souvenirs, upgrades or a half-day extra tour. Quick 5-day sketch: Day 1 arrive Hanoi + Old Quarter stroll, Day 2 full-day Sapa guided trek (early depart/late return), Day 3 Hanoi museums + street food, Day 4 optional day trip (Ninh Binh/boat) or chill, Day 5 fly home. One quick Q — do you prefer budget guesthouses/hostels or a comfy 3-star hotel for your stay? #SapaTrek #LetsGoVietnam
+
+
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I want to go on a 5-day trip in October'}, {'role': 'assistant', 'name': 'Mark Lim', 'content': '\nMark Lim: I can prepare 5-day costed options for October. What is your total budget in SGD, and will you be departing from Singapore?\n\n'}, {'role': 'user', 'content': 'You: My budget is $1300 and I am departing from Singapore'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Great — I’ll check 5-day costed options for October within your $1,300 budget. Quick question: do you prefer beach, city, or nature-focused trips? 🌴🏙️🌲\n\n'}, {'role': 'user', 'content': 'You: I prefer a nature-focused trip'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Vietnam is my top pick — suggested 5-day plan: Hanoi base + Ha Long Bay overnight cruise + Ninh Binh (or swap for a Sapa trek if you want mountains); estimated total ~915 SGD (flight + 5 days’ basics) leaving ~385 SGD for tours and extras. Quick question: do you prefer a relaxed boat/karst scenery trip (Ha Long Bay + Ninh Binh) or an active mountain trek (Sapa)? 🌿⛵️🏞️\n\n'}, {'role': 'user', 'content': 'You: Vietname sounds great! I would like to try an active mountain trek in Sapa'}, {'role': 'assistant', 'name': 'Sara Wong', 'content': '\nSara Wong: Awesome — I’ll pull a detailed 5-day cost estimate for Hanoi + Sapa (active trek) in October. Quick one: do you want a multi-day guided trek with a homestay (more immersive) or just a day guided trek from Hanoi (faster, cheaper)? #SapaTrek #TravelReady\n\n'}, {'role': 'user', 'content': 'You: Just a day guided trek from Hanoi will do!'}, {'role': 'assistant', 'name': 'Sara Wong', 'content': '\nSara Wong: Awesome — quick cost snapshot for 5 days (departing Singapore) — Estimated total ≈ 1,080 SGD:\n- Flights return: 600 SGD\n- Accommodation (4 nights @ ~40/night): 160 SGD\n- Food (5 days @ 15/day): 75 SGD\n- Local transport (5 days @ 8/day): 40 SGD\n- Day guided Sapa trek (Hanoi pick-up & return, incl. lunch): ~120 SGD\n- Extras (city tour/entrance fees, airport transfers, sim): ~85 SGD\n\nThat leaves ~220 SGD buffer from your 1,300 budget for souvenirs, upgrades or a half-day extra tour. Quick 5-day sketch: Day 1 arrive Hanoi + Old Quarter stroll, Day 2 full-day Sapa guided trek (early depart/late return), Day 3 Hanoi museums + street food, Day 4 optional day trip (Ninh Binh/boat) or chill, Day 5 fly home. One quick Q — do you prefer budget guesthouses/hostels or a comfy 3-star hotel for your stay? #SapaTrek #LetsGoVietnam\n\n'}], 'volley_msg_left': 1, 'next_speaker': 'sara', 'exit_count': 1}
+    [COORDINATOR] Volley messages left: 1
+    [COORDINATOR] exit_count: 1
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: emily
+    [COORDINATOR] Final selection: emily (volley 1 -> 0)
+
+You: comfy 3-star hotel will be good
+    [DEBUG] {'messages': [{'role': 'user', 'content': 'You: I want to go on a 5-day trip in October'}, {'role': 'assistant', 'name': 'Mark Lim', 'content': '\nMark Lim: I can prepare 5-day costed options for October. What is your total budget in SGD, and will you be departing from Singapore?\n\n'}, {'role': 'user', 'content': 'You: My budget is $1300 and I am departing from Singapore'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Great — I’ll check 5-day costed options for October within your $1,300 budget. Quick question: do you prefer beach, city, or nature-focused trips? 🌴🏙️🌲\n\n'}, {'role': 'user', 'content': 'You: I prefer a nature-focused trip'}, {'role': 'assistant', 'name': 'Emily Tan', 'content': '\nEmily Tan: Vietnam is my top pick — suggested 5-day plan: Hanoi base + Ha Long Bay overnight cruise + Ninh Binh (or swap for a Sapa trek if you want mountains); estimated total ~915 SGD (flight + 5 days’ basics) leaving ~385 SGD for tours and extras. Quick question: do you prefer a relaxed boat/karst scenery trip (Ha Long Bay + Ninh Binh) or an active mountain trek (Sapa)? 🌿⛵️🏞️\n\n'}, {'role': 'user', 'content': 'You: Vietname sounds great! I would like to try an active mountain trek in Sapa'}, {'role': 'assistant', 'name': 'Sara Wong', 'content': '\nSara Wong: Awesome — I’ll pull a detailed 5-day cost estimate for Hanoi + Sapa (active trek) in October. Quick one: do you want a multi-day guided trek with a homestay (more immersive) or just a day guided trek from Hanoi (faster, cheaper)? #SapaTrek #TravelReady\n\n'}, {'role': 'user', 'content': 'You: Just a day guided trek from Hanoi will do!'}, {'role': 'assistant', 'name': 'Sara Wong', 'content': '\nSara Wong: Awesome — quick cost snapshot for 5 days (departing Singapore) — Estimated total ≈ 1,080 SGD:\n- Flights return: 600 SGD\n- Accommodation (4 nights @ ~40/night): 160 SGD\n- Food (5 days @ 15/day): 75 SGD\n- Local transport (5 days @ 8/day): 40 SGD\n- Day guided Sapa trek (Hanoi pick-up & return, incl. lunch): ~120 SGD\n- Extras (city tour/entrance fees, airport transfers, sim): ~85 SGD\n\nThat leaves ~220 SGD buffer from your 1,300 budget for souvenirs, upgrades or a half-day extra tour. Quick 5-day sketch: Day 1 arrive Hanoi + Old Quarter stroll, Day 2 full-day Sapa guided trek (early depart/late return), Day 3 Hanoi museums + street food, Day 4 optional day trip (Ninh Binh/boat) or chill, Day 5 fly home. One quick Q — do you prefer budget guesthouses/hostels or a comfy 3-star hotel for your stay? #SapaTrek #LetsGoVietnam\n\n'}, {'role': 'user', 'content': 'You: comfy 3-star hotel will be good'}], 'volley_msg_left': 2, 'next_speaker': 'emily', 'exit_count': 0}
+    [COORDINATOR] Volley messages left: 2
+    [COORDINATOR] exit_count: 0
+    [COORDINATOR] Analyzing conversation context...
+    [COORDINATOR] LLM selected: emily
+    [COORDINATOR] Final selection: emily (volley 2 -> 1)
+[Please type 'exit' now or all progress will be lost]
+You: exit
+
+=== CONVERSATION ENDING ===
+
+=== TRAVEL PLANNING CONVERSATION SUMMARY ===
+
+Concise summary of the Travel Planning Committee discussion
+
+1) Key destinations, budgets, and activities
+- Destination focus: Vietnam, with two main options discussed for a 5-day October trip from Singapore.
+  - Option A (initial): Hanoi base + Ha Long Bay overnight cruise + Ninh Binh (or Sapa trek for mountains) — estimated around 915 SGD (flight + basics), leaving about 385 SGD for tours/extras.
+  - Option B (preferred by user): Hanoi + Sapa with a day-guided trek (active, non-homestay) — estimated around 1,080 SGD.
+- Activities: 
+  - Ha Long Bay karst scenery (boat) and Ninh Binh alternative.
+  - Sapa: day-guided trek from Hanoi (active mountain trekking).
+  - Day-by-day sketch for Sapa plan includes a day trek, Hanoi sights, and an optional day trip (Ninh Binh or boat).
+- Budget context:
+  - User budget: 1,300 SGD.
+  - Final snapshot for Sapa option: ~1,080 SGD total; breaks down to about 600 (flights), 160 (accommodation 4 nights), 75 (food), 40 (local transport), 120 (day trek), 85 (extras) with ~220 SGD buffer for extras or upgrades.
+
+2) Roles and contributions of each travel agent
+- Mark Lim: Initiated the process, offered to prepare 5-day costed options for October, and asked about total budget and departure city.
+- Emily Tan: Prioritized nature-focused travel, proposed the Vietnam option (Hanoi + Ha Long Bay + Ninh Binh or Sapa), and framed the initial budget usage and preference questions.
+- Sara Wong: Refined the plan to focus on Hanoi + Sapa with a day-guided trek, provided a detailed cost snapshot, and proposed a day-by-day itinerary; asked about preferred accommodation style and provided a clear cost breakdown.
+
+3) Important recommendations or user preferences highlighted
+- User preferences:
+  - Nature-focused trip, October timing, depart from Singapore, budget 1,300 SGD.
+  - Preference for a mountain trekking experience in Sapa, specifically a day-guided trek (not multi-day homestay).
+  - Accommodation preference settled on a comfy 3-star hotel.
+- Recommendations/decisions:
+  - Favor Sapa day trek option over multi-day homestay; stay in a comfy 3-star hotel; keep within budget with a ~220 SGD or more buffer for extras.
+  - Proposed itinerary includes a balance of trekking days, Hanoi cultural sights, and an optional extra day trip (Ninh Binh or similar).
+
+4) Overall tone and flow of the planning session
+- Tone: Collaborative, proactive, and helpful; quick clarifications guided decision-making.
+- Flow: Clear progression from budget and destination options to specific itinerary and cost breakdown, with iterative refinements based on user preferences. Concluded with a confirmed preference (comfy 3-star stay) and the session closing with an exit.
+
+Thank you! Let's plan another trip again!

@@ -17,7 +17,10 @@ def coordinator(state):
 
     debug(state)
     volley_left = state.get("volley_msg_left", 0)
+    exit_count = state.get("exit_count", 0)
+
     debug(f"Volley messages left: {volley_left}", "COORDINATOR")
+    debug(f"exit_count: {exit_count}", "COORDINATOR")
 
     if volley_left <= 0:
         debug("No volleys left, returning to human", "COORDINATOR")
@@ -45,6 +48,7 @@ def coordinator(state):
     Consider:
     - Who hasn't spoken recently
     - Who has expertise relevant to the user’s current question (budget, activities, weather)
+    - Which expertise (budget, activities, weather) is missing from conversation
     - Which agent’s personality best fits the tone and user’s preference
     - Emily specializes in budget and cost analysis
     - Mark specializes in weather and climate info

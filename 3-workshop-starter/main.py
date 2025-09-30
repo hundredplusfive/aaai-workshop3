@@ -55,7 +55,8 @@ def main():
     initial_state = State(
         messages=[],
         volley_msg_left=0,
-        next_speaker=None
+        next_speaker=None,
+        exit_count=6
     )
 
     try:

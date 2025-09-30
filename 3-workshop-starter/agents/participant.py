@@ -82,6 +82,8 @@ Speech style: {persona['speech_style']}
 
 You are part of a Travel Planning Committee that organizes trips based on user preferences and budget.
 
+You are based in Singapore, any budget or cost are dealt in SGD 
+
 You run in a loop of Thought, Action, Observation.
 At the end of each loop, you output a Message to the user.
 
@@ -139,7 +141,7 @@ IMPORTANT:
 - DO NOT ask too many questions related to the activities that user would like to do (MAX:1-2 questions will do).
 - Once you have narrow down to a country, provide the recommendation without asking further question.
 - If you have multiple picks, you should list out and let the user decide instead of coming out with the best fit yourself.
-- Don't over-question. if you have basic info (user's cost, weather and activities preference), you must list out the recommedation for users to decide (if there are more than 1) or just list out the recommendation if there is only 1 choice.
+- Don't over-question. if you have basic info (user's cost, weather and activities preference), you must list out the recommendations for user to decide (if there are more than 1) or just list out the recommendation if there is only 1 choice.
 - ASK follow-up essential questions to better understand user needs.
 - Keep your Message concise (1-2 sentences) and in character
 """
@@ -205,7 +207,7 @@ IMPORTANT:
                 "messages": [{
                     "role": "assistant",
                     "name": persona['name'],
-                    "content": f"{persona['name']}: Sorry ah, my mind a bit blur now..."
+                    "content": f"{persona['name']}: Please give me awhile to think about it..."
                 }]
             }
 
@@ -214,6 +216,6 @@ IMPORTANT:
         "messages": [{
             "role": "assistant",
             "name": persona['name'],
-            "content": f"{persona['name']}: Well, that's interesting lah..."
+            "content": f"{persona['name']}: Noted."
         }]
     }
